@@ -6,6 +6,8 @@ export default function Unit2Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  // إضافة حالة لتخزين الإجابة المختارة لتلوينها
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   const questions = [
     {
@@ -61,15 +63,22 @@ export default function Unit2Quiz() {
   ];
 
   const handleAnswer = (selected) => {
-    if (selected === questions[currentQuestion].a) {
-      setScore(score + 1);
-    }
-    const next = currentQuestion + 1;
-    if (next < questions.length) {
-      setCurrentQuestion(next);
-    } else {
-      setShowScore(true);
-    }
+    setSelectedAnswer(selected); // تلوين الزر المختار فوراً
+
+    // انتظار 500 ملي ثانية ليرى الطالب اختياره
+    setTimeout(() => {
+      if (selected === questions[currentQuestion].a) {
+        setScore(score + 1);
+      }
+      
+      const next = currentQuestion + 1;
+      if (next < questions.length) {
+        setCurrentQuestion(next);
+        setSelectedAnswer(null); // إعادة التلوين للوضع الطبيعي للسؤال القادم
+      } else {
+        setShowScore(true);
+      }
+    }, 500);
   };
 
   return (
@@ -89,7 +98,22 @@ export default function Unit2Quiz() {
             </div>
             <div style={{ display: 'grid', gap: '15px' }}>
               {questions[currentQuestion].options.map((opt, i) => (
-                <button key={i} onClick={() => handleAnswer(opt)} style={{ textAlign: 'right', padding: '18px', background: '#1e293b', border: '1px solid #334155', color: 'white', borderRadius: '12px', cursor: 'pointer', fontSize: '18px', transition: '0.3s' }}>
+                <button 
+                  key={i} 
+                  onClick={() => handleAnswer(opt)} 
+                  style={{ 
+                    textAlign: 'right', 
+                    padding: '18px', 
+                    // التعديل السحري للألوان (يتحول للبنفسجي عند الاختيار)
+                    background: selectedAnswer === opt ? '#a855f7' : '#1e293b', 
+                    border: selectedAnswer === opt ? '1px solid #c084fc' : '1px solid #334155', 
+                    color: 'white', 
+                    borderRadius: '12px', 
+                    cursor: 'pointer', 
+                    fontSize: '18px', 
+                    transition: '0.3s' 
+                  }}
+                >
                   {opt}
                 </button>
               ))}
