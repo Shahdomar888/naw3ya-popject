@@ -75,6 +75,8 @@ const sections = [
 export default function SummaryPage() {
   return (
     <main className="min-h-screen bg-[#F4F8FB]">
+
+      {/* Header */}
       <section className="bg-[#102B46] px-6 py-14 text-center text-white md:py-16">
         <span className="rounded-full border border-cyan-300/30 bg-white/10 px-5 py-2 text-sm font-bold text-cyan-200">
           Simulation Lab
@@ -91,16 +93,50 @@ export default function SummaryPage() {
       </section>
 
       <section className="mx-auto max-w-5xl px-5 py-12">
-        <div className="mb-8 rounded-2xl border border-cyan-100 bg-white p-6 shadow-sm">
+
+        {/* Introduction */}
+        <div className="mb-10 rounded-2xl border border-cyan-100 bg-white p-6 shadow-sm">
           <h2 className="text-xl font-black text-[#102B46]">
             ماذا ستجد في هذا الملخص؟
           </h2>
+
           <p className="mt-3 leading-8 text-slate-600">
             أهم التعريفات والمفاهيم، والمراجع المستخدمة في جداول البيانات،
             والدوال الأساسية، وتطبيقات المحاكاة وطريقة مونت كارلو.
           </p>
         </div>
 
+        {/* Educational Video */}
+        <div className="mb-12 overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-md md:p-7">
+
+          <div className="mb-6 text-center">
+            <span className="font-bold text-cyan-700">
+              التعلّم المرئي
+            </span>
+
+            <h2 className="mt-3 text-2xl font-black text-[#102B46]">
+              فيديو شرح المقرر
+            </h2>
+
+            <p className="mt-3 leading-8 text-slate-500">
+              شاهدي الفيديو التعليمي لمراجعة موضوعات المحاكاة
+              وتطبيقاتها باستخدام جداول البيانات.
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl bg-[#102B46] p-2 shadow-lg">
+            <iframe
+              className="aspect-video w-full rounded-xl"
+              src="https://www.youtube-nocookie.com/embed/AlUePOGfU1s"
+              title="الفيديو التعليمي عن المحاكاة"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+
+        </div>
+
+        {/* Summary Sections */}
         <div className="space-y-6">
           {sections.map((section, index) => (
             <article
@@ -111,6 +147,7 @@ export default function SummaryPage() {
                 <span className="text-xs font-bold text-cyan-300">
                   الجزء {index + 1}
                 </span>
+
                 <h2 className="mt-1 text-lg font-black md:text-xl">
                   {section.title}
                 </h2>
@@ -125,6 +162,7 @@ export default function SummaryPage() {
                     <h3 className="font-extrabold text-[#087E91]">
                       {point.name}
                     </h3>
+
                     <p className="mt-2 text-sm leading-8 text-slate-600">
                       {point.detail}
                     </p>
@@ -135,14 +173,15 @@ export default function SummaryPage() {
           ))}
         </div>
 
+        {/* Comprehensive Quiz */}
         <div className="mt-10 rounded-3xl bg-[#102B46] p-8 text-center text-white">
           <h2 className="text-2xl font-black">
             هل أنت مستعد لاختبار معلوماتك؟
           </h2>
 
           <p className="mt-3 leading-8 text-white/80">
-            بعد مراجعة الملخص، جرّب الاختبار الشامل وتعرّف على مستواك
-            في موضوعات المقرر.
+            بعد مراجعة الملخص ومشاهدة الفيديو، جرّبي الاختبار الشامل
+            وتعرّفي على مستواك في موضوعات المقرر.
           </p>
 
           <Link
@@ -152,6 +191,7 @@ export default function SummaryPage() {
             ابدأ الاختبار الشامل
           </Link>
         </div>
+
       </section>
     </main>
   );

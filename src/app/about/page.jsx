@@ -34,6 +34,10 @@ export default function Home() {
             ابدأ التعلّم الآن
           </Link>
 
+          <p className="mt-8 text-base font-semibold text-cyan-100">
+            إعداد الطالبة: شهد أحمد صابر عمر
+          </p>
+
         </div>
 
         <div className="pointer-events-none absolute -right-20 top-10 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
@@ -79,7 +83,7 @@ export default function Home() {
 
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="mx-auto grid max-w-2xl gap-8 md:grid-cols-1">
 
           {/* Courses */}
           <Link
@@ -105,93 +109,6 @@ export default function Home() {
             </span>
 
           </Link>
-
-          {/* Quizzes */}
-          <Link
-            href="/quizzes"
-            className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
-          >
-
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-50 text-4xl">
-              📝
-            </div>
-
-            <h3 className="mb-4 text-xl font-bold text-[#102B46]">
-              الاختبارات
-            </h3>
-
-            <p className="leading-8 text-slate-500">
-              اختبر معلوماتك من خلال مجموعة من الأسئلة
-              التفاعلية حول موضوعات المقرر.
-            </p>
-
-            <span className="mt-6 inline-block font-bold text-cyan-700">
-              ابدأ الاختبار ←
-            </span>
-
-          </Link>
-
-          {/* About */}
-          <Link
-            href="/about"
-            className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
-          >
-
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-4xl">
-              💡
-            </div>
-
-            <h3 className="mb-4 text-xl font-bold text-[#102B46]">
-              عن المشروع
-            </h3>
-
-            <p className="leading-8 text-slate-500">
-              تعرّف على فكرة المشروع وأهدافه
-              وأهميته في دعم العملية التعليمية.
-            </p>
-
-            <span className="mt-6 inline-block font-bold text-cyan-700">
-              اعرف المزيد ←
-            </span>
-
-          </Link>
-
-        </div>
-
-      </section>
-
-      {/* YouTube Video Section */}
-      <section className="bg-white px-6 py-20">
-
-        <div className="mx-auto max-w-5xl">
-
-          <div className="mb-10 text-center">
-
-            <span className="font-bold text-cyan-700">
-              التعلّم المرئي
-            </span>
-
-            <h2 className="mb-4 mt-3 text-3xl font-extrabold text-[#102B46]">
-              شاهد وتعلّم
-            </h2>
-
-            <p className="text-slate-500">
-              شاهد الفيديو التعليمي وتعرّف على موضوعات الدرس.
-            </p>
-
-          </div>
-
-          <div className="overflow-hidden rounded-3xl border-4 border-slate-100 bg-[#102B46] p-3 shadow-xl">
-
-            <iframe
-              className="aspect-video w-full rounded-2xl"
-              src="https://www.youtube-nocookie.com/embed/AlUePOGfU1s"
-              title="الفيديو التعليمي عن المحاكاة"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-
-          </div>
 
         </div>
 
