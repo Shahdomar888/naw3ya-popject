@@ -3,25 +3,30 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-800">
+    <main className="min-h-screen bg-[#F7F9FC] text-[#263B49]">
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#102B46] via-[#174D70] to-[#087E91] px-6 py-24 text-center text-white">
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#EAF4F3] via-[#F2F8FA] to-[#FFF6E5] px-6 py-24 text-center md:py-32">
 
-        <div className="mx-auto max-w-4xl relative z-10">
+        {/* Decorative Shapes */}
+        <div className="absolute -right-20 top-10 h-72 w-72 rounded-full bg-[#35A99A]/20 blur-3xl" />
+        <div className="absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-[#176B78]/15 blur-3xl" />
+        <div className="absolute right-1/4 top-20 h-16 w-16 rotate-12 rounded-2xl bg-[#E9B44C]/30" />
 
-          <span className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-6 py-2 text-sm">
-            مرحبًا بك في منصتك التعليمية
+        <div className="relative z-10 mx-auto max-w-5xl">
+
+          <span className="mb-7 inline-block rounded-full border border-[#35A99A]/30 bg-white/90 px-7 py-3 text-sm font-bold text-[#176B78] shadow-sm">
+            ✨ مرحبًا بك في منصتك التعليمية
           </span>
 
-          <h1 className="mb-7 text-4xl font-extrabold leading-relaxed md:text-6xl">
+          <h1 className="mb-8 text-4xl font-black leading-relaxed text-[#263B49] md:text-6xl">
             اكتشف عالم المحاكاة
-            <span className="block text-cyan-300">
+            <span className="mt-2 block bg-gradient-to-l from-[#176B78] via-[#35A99A] to-[#B68A2D] bg-clip-text text-transparent">
               باستخدام جداول البيانات
             </span>
           </h1>
 
-          <p className="mx-auto mb-9 max-w-2xl text-lg leading-9 text-slate-200">
+          <p className="mx-auto mb-10 max-w-3xl text-lg leading-10 text-[#526B78] md:text-xl">
             تعرّف على مفهوم المحاكاة وتطبيقاتها العملية،
             واكتشف كيف تساعدنا جداول البيانات في تحليل
             المواقف وحل المشكلات بطريقة سهلة ومبتكرة.
@@ -29,109 +34,83 @@ export default function Home() {
 
           <Link
             href="/courses"
-            className="inline-block rounded-xl bg-cyan-400 px-10 py-4 font-bold text-[#102B46] shadow-lg transition hover:-translate-y-1 hover:bg-cyan-300"
+            className="inline-block rounded-2xl bg-gradient-to-l from-[#176B78] to-[#35A99A] px-12 py-5 text-lg font-extrabold text-white shadow-xl shadow-[#176B78]/20 transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
           >
-            ابدأ التعلّم الآن
+            ابدأ التعلّم الآن ←
           </Link>
 
-          <p className="mt-8 text-base font-semibold text-cyan-100">
-            إعداد الطالبة: شهد أحمد صابر عمر
-          </p>
+          {/* Student Name */}
+          <div className="mx-auto mt-14 max-w-2xl rounded-3xl border border-white bg-white/90 px-6 py-8 shadow-xl shadow-[#176B78]/10 backdrop-blur-md">
+
+            <span className="mb-3 inline-block rounded-full bg-[#FFF2D5] px-5 py-2 text-sm font-bold text-[#946B1D]">
+              إعداد الطالبة
+            </span>
+
+            <h2 className="text-2xl font-black leading-relaxed text-[#176B78] md:text-4xl">
+              شهد أحمد صابر عمر
+            </h2>
+
+            <div className="mx-auto mt-5 h-1.5 w-28 rounded-full bg-gradient-to-l from-[#35A99A] to-[#E9B44C]" />
+
+          </div>
 
         </div>
-
-        <div className="pointer-events-none absolute -right-20 top-10 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-blue-400/10 blur-3xl" />
-
       </section>
 
-      {/* Main Educational Image */}
-      <section className="mx-auto max-w-6xl px-6 pt-14">
+      {/* Educational Image */}
+      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
 
-        <div className="overflow-hidden rounded-3xl border-4 border-white shadow-2xl">
+        <div className="overflow-hidden rounded-[2rem] border-4 border-white shadow-2xl shadow-[#176B78]/10">
 
           <img
             src="/images/ExcelSimulationEducational.png"
             alt="المحاكاة باستخدام برنامج Excel"
-            className="h-[280px] w-full object-cover md:h-[500px]"
+            className="h-[280px] w-full object-cover transition duration-700 hover:scale-[1.02] md:h-[500px]"
           />
 
         </div>
 
-        <p className="mt-5 text-center text-sm text-slate-500">
-          المحاكاة وتحليل البيانات باستخدام جداول البيانات
-        </p>
+        <div className="mx-auto mt-8 max-w-2xl text-center">
 
-      </section>
-
-      {/* Platform Sections */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
-
-        <div className="mb-12 text-center">
-
-          <span className="font-bold text-cyan-700">
-            اكتشف المنصة
+          <span className="inline-block rounded-full bg-[#EAF4F3] px-6 py-2 text-sm font-bold text-[#176B78]">
+            التعلم بالتطبيق والتجربة
           </span>
 
-          <h2 className="mb-4 mt-3 text-3xl font-extrabold text-[#102B46]">
-            أقسام المنصة
-          </h2>
-
-          <p className="text-slate-500">
-            كل ما تحتاجه للتعلّم في مكان واحد
+          <p className="mt-4 text-lg font-semibold leading-9 text-[#526B78]">
+            المحاكاة وتحليل البيانات باستخدام جداول البيانات
           </p>
-
-        </div>
-
-        <div className="mx-auto grid max-w-2xl gap-8 md:grid-cols-1">
-
-          {/* Courses */}
-          <Link
-            href="/courses"
-            className="group rounded-3xl border border-slate-100 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
-          >
-
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-4xl">
-              📚
-            </div>
-
-            <h3 className="mb-4 text-xl font-bold text-[#102B46]">
-              المقرر الدراسي
-            </h3>
-
-            <p className="leading-8 text-slate-500">
-              تعرّف على محتوى المقرر ومفاهيم المحاكاة
-              وتطبيقاتها باستخدام جداول البيانات.
-            </p>
-
-            <span className="mt-6 inline-block font-bold text-cyan-700">
-              استكشف المقرر ←
-            </span>
-
-          </Link>
 
         </div>
 
       </section>
 
       {/* Final Section */}
-      <section className="bg-gradient-to-l from-[#102B46] to-[#174D70] px-6 py-16 text-center text-white">
+      <section className="relative overflow-hidden bg-gradient-to-l from-[#176B78] via-[#238B8B] to-[#35A99A] px-6 py-20 text-center text-white">
 
-        <h2 className="mb-5 text-3xl font-extrabold">
-          المعرفة تبدأ بالتجربة
-        </h2>
+        <div className="absolute -right-20 top-0 h-64 w-64 rounded-full bg-[#E9B44C]/20 blur-3xl" />
+        <div className="absolute -bottom-20 left-0 h-64 w-64 rounded-full bg-white/15 blur-3xl" />
 
-        <p className="mx-auto max-w-2xl leading-9 text-slate-200">
-          تعلّم مفاهيم جديدة، واستكشف تطبيقات المحاكاة،
-          وطوّر مهاراتك في تحليل البيانات وحل المشكلات.
-        </p>
+        <div className="relative z-10 mx-auto max-w-3xl">
 
-        <Link
-          href="/courses"
-          className="mt-8 inline-block rounded-xl bg-cyan-400 px-9 py-4 font-bold text-[#102B46] transition hover:bg-cyan-300"
-        >
-          تصفح المقرر
-        </Link>
+          <span className="mb-5 inline-block text-4xl">💡</span>
+
+          <h2 className="mb-6 text-3xl font-black leading-relaxed md:text-4xl">
+            المعرفة تبدأ بالتجربة
+          </h2>
+
+          <p className="text-lg leading-10 text-white/95">
+            تعلّم مفاهيم جديدة، واستكشف تطبيقات المحاكاة،
+            وطوّر مهاراتك في تحليل البيانات وحل المشكلات.
+          </p>
+
+          <Link
+            href="/courses"
+            className="mt-9 inline-block rounded-2xl bg-[#E9B44C] px-11 py-4 font-extrabold text-[#263B49] shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-[#F3CC76]"
+          >
+            تصفح المقرر الدراسي ←
+          </Link>
+
+        </div>
 
       </section>
 

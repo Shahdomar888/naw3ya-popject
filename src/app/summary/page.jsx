@@ -74,11 +74,11 @@ const sections = [
 
 export default function SummaryPage() {
   return (
-    <main className="min-h-screen bg-[#F4F8FB]">
+    <main className="min-h-screen bg-[#F7F9FC]">
 
       {/* Header */}
-      <section className="bg-[#102B46] px-6 py-14 text-center text-white md:py-16">
-        <span className="rounded-full border border-cyan-300/30 bg-white/10 px-5 py-2 text-sm font-bold text-cyan-200">
+      <section className="bg-gradient-to-br from-[#176B78] to-[#263B49] px-6 py-14 text-center text-white md:py-16">
+        <span className="rounded-full border border-[#E9B44C]/40 bg-white/10 px-5 py-2 text-sm font-bold text-[#E9B44C]">
           Simulation Lab
         </span>
 
@@ -86,7 +86,7 @@ export default function SummaryPage() {
           ملخص المقرر
         </h1>
 
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-8 text-white/80 md:text-base">
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-8 text-white/85 md:text-base">
           مراجعة سريعة لأهم المفاهيم والدوال والتطبيقات التي
           تناولناها في الدرسين الأول والثاني.
         </p>
@@ -95,36 +95,36 @@ export default function SummaryPage() {
       <section className="mx-auto max-w-5xl px-5 py-12">
 
         {/* Introduction */}
-        <div className="mb-10 rounded-2xl border border-cyan-100 bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-black text-[#102B46]">
+        <div className="mb-10 rounded-2xl border border-[#EAF4F3] bg-white p-6 shadow-sm">
+          <h2 className="text-xl font-black text-[#176B78]">
             ماذا ستجد في هذا الملخص؟
           </h2>
 
-          <p className="mt-3 leading-8 text-slate-600">
+          <p className="mt-3 leading-8 text-[#526B78]">
             أهم التعريفات والمفاهيم، والمراجع المستخدمة في جداول البيانات،
             والدوال الأساسية، وتطبيقات المحاكاة وطريقة مونت كارلو.
           </p>
         </div>
 
         {/* Educational Video */}
-        <div className="mb-12 overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-md md:p-7">
+        <div className="mb-12 overflow-hidden rounded-3xl border border-[#EAF4F3] bg-white p-5 shadow-md md:p-7">
 
           <div className="mb-6 text-center">
-            <span className="font-bold text-cyan-700">
+            <span className="font-bold text-[#35A99A]">
               التعلّم المرئي
             </span>
 
-            <h2 className="mt-3 text-2xl font-black text-[#102B46]">
+            <h2 className="mt-3 text-2xl font-black text-[#176B78]">
               فيديو شرح المقرر
             </h2>
 
-            <p className="mt-3 leading-8 text-slate-500">
+            <p className="mt-3 leading-8 text-[#71838B]">
               شاهدي الفيديو التعليمي لمراجعة موضوعات المحاكاة
               وتطبيقاتها باستخدام جداول البيانات.
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl bg-[#102B46] p-2 shadow-lg">
+          <div className="overflow-hidden rounded-2xl bg-[#263B49] p-2 shadow-lg">
             <iframe
               className="aspect-video w-full rounded-xl"
               src="https://www.youtube-nocookie.com/embed/AlUePOGfU1s"
@@ -141,10 +141,10 @@ export default function SummaryPage() {
           {sections.map((section, index) => (
             <article
               key={section.title}
-              className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+              className="overflow-hidden rounded-2xl border border-[#EAF4F3] bg-white shadow-sm"
             >
-              <div className="bg-[#102B46] px-6 py-5 text-white">
-                <span className="text-xs font-bold text-cyan-300">
+              <div className="bg-gradient-to-r from-[#176B78] to-[#263B49] px-6 py-5 text-white">
+                <span className="text-xs font-bold text-[#E9B44C]">
                   الجزء {index + 1}
                 </span>
 
@@ -157,13 +157,13 @@ export default function SummaryPage() {
                 {section.points.map((point) => (
                   <div
                     key={point.name}
-                    className="rounded-xl border border-slate-100 bg-[#F8FAFC] p-4"
+                    className="rounded-xl border border-[#EAF4F3] bg-[#F7F9FC] p-4 transition hover:border-[#35A99A]/50"
                   >
-                    <h3 className="font-extrabold text-[#087E91]">
+                    <h3 className="font-extrabold text-[#176B78]">
                       {point.name}
                     </h3>
 
-                    <p className="mt-2 text-sm leading-8 text-slate-600">
+                    <p className="mt-2 text-sm leading-8 text-[#526B78]">
                       {point.detail}
                     </p>
                   </div>
@@ -174,19 +174,19 @@ export default function SummaryPage() {
         </div>
 
         {/* Comprehensive Quiz */}
-        <div className="mt-10 rounded-3xl bg-[#102B46] p-8 text-center text-white">
+        <div className="mt-10 rounded-3xl bg-gradient-to-br from-[#176B78] to-[#263B49] p-8 text-center text-white">
           <h2 className="text-2xl font-black">
             هل أنت مستعد لاختبار معلوماتك؟
           </h2>
 
-          <p className="mt-3 leading-8 text-white/80">
+          <p className="mt-3 leading-8 text-white/85">
             بعد مراجعة الملخص ومشاهدة الفيديو، جرّبي الاختبار الشامل
             وتعرّفي على مستواك في موضوعات المقرر.
           </p>
 
           <Link
             href="/comprehensive-quiz"
-            className="mt-7 inline-flex rounded-xl bg-[#087E91] px-8 py-4 font-extrabold text-white transition hover:bg-[#066777]"
+            className="mt-7 inline-flex rounded-xl bg-[#35A99A] px-8 py-4 font-extrabold text-white transition hover:bg-[#278F83]"
           >
             ابدأ الاختبار الشامل
           </Link>

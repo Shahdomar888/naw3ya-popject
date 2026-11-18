@@ -273,41 +273,57 @@ export default function ComprehensiveQuizPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#F4F8FB] pb-16">
-      <section className="bg-[#102B46] px-6 py-12 text-center text-white md:py-16">
-        <span className="rounded-full border border-cyan-300/30 bg-white/10 px-5 py-2 text-sm font-bold text-cyan-200">
-          Simulation Lab
-        </span>
+    <main className="min-h-screen bg-[#F7F9FC] pb-16 text-[#263B49]">
 
-        <h1 className="mt-6 text-3xl font-black md:text-4xl">
-          الاختبار الشامل
-        </h1>
+      {/* Hero Section */}
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#176B78] via-[#238B8B] to-[#35A99A] px-6 py-12 text-center text-white md:py-16">
 
-        <p className="mx-auto mt-4 max-w-2xl text-sm leading-8 text-white/80 md:text-base">
-          اختبر معلوماتك في موضوعات الدرسين الأول والثاني
-          من خلال 20 سؤالًا متنوعًا.
-        </p>
+        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#E9B44C]/20 blur-3xl" />
+        <div className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
 
-        <div className="mx-auto mt-7 flex max-w-md justify-center gap-4">
-          <div className="rounded-2xl bg-white/10 px-6 py-3">
-            <p className="text-2xl font-black text-cyan-300">20</p>
-            <p className="mt-1 text-xs text-white/80">سؤال</p>
+        <div className="relative mx-auto max-w-4xl">
+
+          <span className="rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm font-bold text-white">
+            ✨ Simulation Lab
+          </span>
+
+          <h1 className="mt-6 text-3xl font-black md:text-5xl">
+            الاختبار الشامل
+          </h1>
+
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-8 text-white/90 md:text-base">
+            اختبر معلوماتك في موضوعات الدرسين الأول والثاني
+            من خلال 20 سؤالًا متنوعًا.
+          </p>
+
+          <div className="mx-auto mt-7 flex max-w-md justify-center gap-4">
+            <div className="rounded-2xl border border-white/15 bg-white/10 px-7 py-3">
+              <p className="text-2xl font-black text-[#FFE09A]">20</p>
+              <p className="mt-1 text-xs text-white/90">سؤال</p>
+            </div>
+
+            <div className="rounded-2xl border border-white/15 bg-white/10 px-7 py-3">
+              <p className="text-2xl font-black text-[#FFE09A]">2</p>
+              <p className="mt-1 text-xs text-white/90">درسان</p>
+            </div>
           </div>
-          <div className="rounded-2xl bg-white/10 px-6 py-3">
-            <p className="text-2xl font-black text-cyan-300">2</p>
-            <p className="mt-1 text-xs text-white/80">درسان</p>
-          </div>
+
+          <div className="mx-auto mt-8 h-1.5 w-24 rounded-full bg-[#E9B44C]" />
+
         </div>
       </section>
 
       <section className="mx-auto max-w-4xl px-5 py-10">
+
+        {/* Result */}
         {submitted ? (
-          <div className="mb-8 rounded-3xl border border-cyan-100 bg-white p-8 text-center shadow-lg">
+          <div className="mb-8 rounded-3xl border border-[#E2ECEC] bg-white p-8 text-center shadow-lg shadow-[#176B78]/10">
+
             <div className="text-5xl">
               {percentage >= 85 ? "🏆" : percentage >= 60 ? "🎉" : "📚"}
             </div>
 
-            <h2 className="mt-4 text-2xl font-black text-[#102B46]">
+            <h2 className="mt-4 text-2xl font-black text-[#176B78]">
               {percentage >= 85
                 ? "ممتاز! أداء رائع"
                 : percentage >= 60
@@ -315,63 +331,74 @@ export default function ComprehensiveQuizPage() {
                 : "استمر في التعلم والمحاولة"}
             </h2>
 
-            <p className="mt-3 text-slate-600">
+            <p className="mt-3 text-[#71838B]">
               لقد أكملت الاختبار الشامل بنجاح.
             </p>
 
-            <div className="mx-auto mt-7 flex h-36 w-36 flex-col items-center justify-center rounded-full border-[10px] border-[#087E91]/20 bg-cyan-50">
-              <span className="text-4xl font-black text-[#087E91]">
+            <div className="mx-auto mt-7 flex h-36 w-36 flex-col items-center justify-center rounded-full border-[10px] border-[#E9B44C]/50 bg-[#FFF8E8]">
+              <span className="text-4xl font-black text-[#176B78]">
                 {percentage}%
               </span>
-              <span className="mt-1 text-xs text-slate-500">النسبة المئوية</span>
+              <span className="mt-1 text-xs text-[#71838B]">
+                النسبة المئوية
+              </span>
             </div>
 
-            <p className="mt-6 text-lg font-bold text-[#102B46]">
+            <p className="mt-6 text-lg font-bold text-[#176B78]">
               درجتك: {score} من {questions.length}
             </p>
 
-            <p className="mt-2 text-sm text-slate-500">
+            <p className="mt-2 text-sm text-[#71838B]">
               الإجابات الصحيحة: {score} — الإجابات غير الصحيحة:{" "}
               {questions.length - score}
             </p>
 
             <button
               onClick={resetQuiz}
-              className="mt-7 rounded-xl bg-[#087E91] px-8 py-3 font-bold text-white transition hover:bg-[#066777]"
+              className="mt-7 rounded-xl bg-[#176B78] px-8 py-3 font-bold text-white transition hover:bg-[#125762]"
             >
               إعادة الاختبار
             </button>
+
           </div>
         ) : (
-          <div className="mb-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          /* Progress */
+          <div className="mb-8 rounded-2xl border border-[#E2ECEC] bg-white p-5 shadow-sm">
+
             <div className="flex items-center justify-between gap-3">
-              <p className="font-bold text-[#102B46]">تقدمك في الاختبار</p>
-              <p className="text-sm font-bold text-[#087E91]">
+              <p className="font-bold text-[#176B78]">
+                تقدمك في الاختبار
+              </p>
+
+              <p className="text-sm font-bold text-[#238B8B]">
                 {answeredCount} / {questions.length}
               </p>
             </div>
 
-            <div className="mt-3 h-3 overflow-hidden rounded-full bg-slate-100">
+            <div className="mt-3 h-3 overflow-hidden rounded-full bg-[#EAF4F3]">
               <div
-                className="h-full rounded-full bg-[#087E91] transition-all duration-300"
+                className="h-full rounded-full bg-gradient-to-l from-[#176B78] to-[#35A99A] transition-all duration-300"
                 style={{
                   width: `${(answeredCount / questions.length) * 100}%`,
                 }}
               />
             </div>
+
           </div>
         )}
 
+        {/* Sound Button */}
         <div className="mb-6 flex justify-end">
           <button
             type="button"
             onClick={() => setSoundEnabled((value) => !value)}
-            className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-[#102B46] shadow-sm"
+            className="rounded-xl border border-[#E2ECEC] bg-white px-4 py-2 text-sm font-bold text-[#176B78] shadow-sm transition hover:bg-[#EAF4F3]"
           >
             {soundEnabled ? "🔊 الصوت يعمل" : "🔇 الصوت مغلق"}
           </button>
         </div>
 
+        {/* Questions */}
         {questions.map((question, index) => {
           const selected = answers[index];
           const isCorrect = selected === question.answer;
@@ -379,29 +406,33 @@ export default function ComprehensiveQuizPage() {
           return (
             <article
               key={index}
-              className="mb-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-7"
+              className="mb-6 rounded-2xl border border-[#E2ECEC] bg-white p-5 shadow-sm transition hover:shadow-md md:p-7"
             >
+
               <div className="mb-5 flex items-start gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#102B46] font-black text-white">
+
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#176B78] font-black text-white">
                   {index + 1}
                 </span>
 
-                <h3 className="pt-1 font-extrabold leading-7 text-[#102B46]">
+                <h3 className="pt-1 font-extrabold leading-7 text-[#176B78]">
                   {question.question}
                 </h3>
+
               </div>
 
               <div className="space-y-3">
+
                 {question.options.map((option, optionIndex) => {
                   const isSelected = selected === optionIndex;
                   const isRightAnswer = optionIndex === question.answer;
 
                   let optionStyle =
-                    "border-slate-200 bg-white hover:border-[#087E91] hover:bg-cyan-50";
+                    "border-[#E2ECEC] bg-white hover:border-[#35A99A] hover:bg-[#EAF4F3]";
 
                   if (!submitted && isSelected) {
                     optionStyle =
-                      "border-[#087E91] bg-cyan-50 shadow-sm";
+                      "border-[#238B8B] bg-[#EAF4F3] shadow-sm";
                   }
 
                   if (submitted && isRightAnswer) {
@@ -416,11 +447,10 @@ export default function ComprehensiveQuizPage() {
                     <label
                       key={optionIndex}
                       className={`flex items-center gap-3 rounded-xl border-2 p-4 transition ${optionStyle} ${
-                        submitted
-                          ? "cursor-default"
-                          : "cursor-pointer"
+                        submitted ? "cursor-default" : "cursor-pointer"
                       }`}
                     >
+
                       <input
                         type="radio"
                         name={`question-${index}`}
@@ -433,7 +463,7 @@ export default function ComprehensiveQuizPage() {
                             [index]: optionIndex,
                           }))
                         }
-                        className="h-4 w-4 accent-[#087E91]"
+                        className="h-4 w-4 accent-[#176B78]"
                       />
 
                       <span className="flex-1 text-sm font-semibold leading-7">
@@ -447,9 +477,11 @@ export default function ComprehensiveQuizPage() {
                       {submitted && isSelected && !isCorrect && (
                         <span className="font-black text-red-600">✕</span>
                       )}
+
                     </label>
                   );
                 })}
+
               </div>
 
               {submitted && (
@@ -457,22 +489,26 @@ export default function ComprehensiveQuizPage() {
                   className={`mt-4 rounded-xl p-4 text-sm leading-7 ${
                     isCorrect
                       ? "bg-green-50 text-green-800"
-                      : "bg-amber-50 text-amber-900"
+                      : "bg-[#FFF6E5] text-[#795C21]"
                   }`}
                 >
                   <p className="font-extrabold">
                     {isCorrect ? "إجابة صحيحة" : "إجابة غير صحيحة"}
                   </p>
+
                   <p className="mt-1">{question.explanation}</p>
                 </div>
               )}
+
             </article>
           );
         })}
 
+        {/* Submit */}
         {!submitted && (
-          <div className="rounded-2xl bg-[#102B46] p-6 text-center text-white">
-            <p className="mb-4 text-sm leading-7 text-white/80">
+          <div className="rounded-2xl bg-gradient-to-l from-[#176B78] to-[#238B8B] p-6 text-center text-white shadow-lg">
+
+            <p className="mb-4 text-sm leading-7 text-white/90">
               {answeredCount === questions.length
                 ? "أكملت الإجابة عن جميع الأسئلة. يمكنك الآن تصحيح الاختبار."
                 : `أجيبي عن الأسئلة المتبقية أولًا. متبقي ${
@@ -483,21 +519,24 @@ export default function ComprehensiveQuizPage() {
             <button
               onClick={handleSubmit}
               disabled={answeredCount !== questions.length}
-              className="rounded-xl bg-[#087E91] px-10 py-4 font-extrabold text-white transition hover:bg-[#066777] disabled:cursor-not-allowed disabled:opacity-40"
+              className="rounded-xl bg-[#E9B44C] px-10 py-4 font-extrabold text-[#263B49] transition hover:-translate-y-1 hover:bg-[#F3CC76] disabled:cursor-not-allowed disabled:opacity-40"
             >
               تصحيح الاختبار وإظهار النتيجة
             </button>
+
           </div>
         )}
 
+        {/* Back Link */}
         <div className="mt-8 text-center">
           <Link
             href="/courses"
-            className="font-bold text-[#087E91] transition hover:text-[#102B46]"
+            className="font-bold text-[#176B78] transition hover:text-[#35A99A]"
           >
             العودة إلى المقرر
           </Link>
         </div>
+
       </section>
     </main>
   );
