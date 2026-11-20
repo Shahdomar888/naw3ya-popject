@@ -1,0 +1,85 @@
+
+@import "tailwindcss";
+
+:root {
+  --navy: #142F50;
+  --green: #21845A;
+  --gold: #D5AD62;
+  --page-bg: #F3F6FA;
+  --white: #FFFFFF;
+  --text: #34465A;
+  --muted: #718096;
+  --border: #DFE6EF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: var(--navy);
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Main surfaces */
+.bg-white {
+  background-color: var(--white);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.text-blue-900,
+.text-blue-800,
+.text-blue-700 {
+  color: var(--navy);
+}
+
+.text-green-700,
+.text-green-800 {
+  color: var(--green);
+}
+
+.bg-blue-900,
+.bg-blue-800,
+.bg-blue-700 {
+  background-color: var(--navy);
+}
+
+.bg-green-700,
+.bg-green-600 {
+  background-color: var(--green);
+}
+
+.border-blue-700,
+.border-blue-800 {
+  border-color: var(--navy);
+}
+
+.border-green-600,
+.border-green-700 {
+  border-color: var(--green);
+}
