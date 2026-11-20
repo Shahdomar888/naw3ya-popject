@@ -96,7 +96,7 @@ const simulationApplications = [
   {
     number: "03",
     title: "استخدام Excel في المحاكاة",
-    image: "/images/excel-simulation.png",
+    image: "/images/excel.png",
     alt: "استخدام برنامج Excel في المحاكاة وتنظيم البيانات",
     concept:
       "يُعد Excel أداة تساعدنا على إنشاء نماذج المحاكاة من خلال إدخال البيانات في جداول، واستخدام المعادلات الحسابية، ومتابعة النتائج بطريقة منظمة.",
