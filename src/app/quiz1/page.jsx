@@ -170,14 +170,14 @@ export default function QuizOne() {
   return (
     <main
       dir="rtl"
-      className="min-h-screen bg-[#F7F9FC] text-[#263B49]"
+      className="min-h-screen bg-[#F3F6FA] text-[#536579]"
     >
 
       {/* Header */}
-      <section className="bg-gradient-to-l from-[#176B78] to-[#263B49] text-white">
+      <section className="bg-gradient-to-l from-[#142F50] to-[#21845A] text-white">
         <div className="mx-auto max-w-5xl px-6 py-16 text-center">
 
-          <span className="rounded-full border border-[#E9B44C]/50 bg-white/10 px-5 py-2 text-sm font-bold text-[#E9B44C]">
+          <span className="rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm font-bold text-white">
             Simulation Lab
           </span>
 
@@ -185,7 +185,7 @@ export default function QuizOne() {
             اختبار الدرس الأول
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-9 text-white/85">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-9 text-[#F3F6FA]">
             اختبر معلوماتك حول المراجع في جداول البيانات
             ومفهوم المحاكاة وتطبيقاتها.
           </p>
@@ -195,26 +195,26 @@ export default function QuizOne() {
 
       {/* Quiz Information */}
       <section className="mx-auto max-w-4xl px-6 pt-10">
-        <div className="rounded-3xl border border-[#EAF4F3] bg-white p-6 shadow-sm">
+        <div className="rounded-3xl border border-[#DFE6EF] bg-white p-6 shadow-sm">
 
           <div className="flex flex-wrap items-center justify-between gap-4">
 
             <div>
-              <h2 className="text-xl font-extrabold text-[#176B78]">
+              <h2 className="text-xl font-extrabold text-[#142F50]">
                 اختبر نفسك
               </h2>
 
-              <p className="mt-2 text-[#71838B]">
+              <p className="mt-2 text-[#536579]">
                 أجب عن جميع الأسئلة ثم اضغط على تصحيح الإجابات.
               </p>
             </div>
 
-            <div className="rounded-xl bg-[#EAF4F3] px-5 py-3 text-center">
-              <p className="text-sm text-[#71838B]">
+            <div className="rounded-xl bg-[#F3F6FA] px-5 py-3 text-center">
+              <p className="text-sm text-[#536579]">
                 عدد الأسئلة
               </p>
 
-              <p className="text-2xl font-extrabold text-[#176B78]">
+              <p className="text-2xl font-extrabold text-[#142F50]">
                 {questions.length}
               </p>
             </div>
@@ -222,14 +222,14 @@ export default function QuizOne() {
           </div>
 
           {/* Sound Setting */}
-          <div className="mt-6 flex items-center justify-between rounded-xl bg-[#F7F9FC] p-4">
+          <div className="mt-6 flex items-center justify-between rounded-xl bg-[#F3F6FA] p-4">
 
             <div>
-              <p className="font-bold text-[#176B78]">
+              <p className="font-bold text-[#142F50]">
                 صوت الاحتفال
               </p>
 
-              <p className="mt-1 text-sm text-[#71838B]">
+              <p className="mt-1 text-sm text-[#536579]">
                 تشغيل الصوت عند إنهاء الاختبار
               </p>
             </div>
@@ -239,8 +239,8 @@ export default function QuizOne() {
               onClick={() => setSoundEnabled(!soundEnabled)}
               className={`rounded-xl px-5 py-2 font-bold text-white transition ${
                 soundEnabled
-                  ? "bg-[#35A99A] hover:bg-[#278F83]"
-                  : "bg-[#71838B]"
+                  ? "bg-[#142F50] hover:bg-[#21845A]"
+                  : "bg-[#536579]"
               }`}
             >
               {soundEnabled ? "الصوت يعمل 🔊" : "الصوت مغلق 🔇"}
@@ -252,18 +252,18 @@ export default function QuizOne() {
           <div className="mt-7">
 
             <div className="mb-2 flex justify-between text-sm font-bold">
-              <span className="text-[#263B49]">
+              <span className="text-[#536579]">
                 تقدم الإجابة
               </span>
 
-              <span className="text-[#176B78]">
+              <span className="text-[#142F50]">
                 {answeredCount} / {questions.length}
               </span>
             </div>
 
-            <div className="h-3 overflow-hidden rounded-full bg-[#EAF4F3]">
+            <div className="h-3 overflow-hidden rounded-full bg-[#DFE6EF]">
               <div
-                className="h-full rounded-full bg-[#35A99A] transition-all duration-300"
+                className="h-full rounded-full bg-[#21845A] transition-all duration-300"
                 style={{
                   width: `${(answeredCount / questions.length) * 100}%`,
                 }}
@@ -280,12 +280,12 @@ export default function QuizOne() {
         {questions.map((question, questionIndex) => (
           <article
             key={questionIndex}
-            className="overflow-hidden rounded-3xl border border-[#EAF4F3] bg-white shadow-sm"
+            className="overflow-hidden rounded-3xl border border-[#DFE6EF] bg-white shadow-sm"
           >
 
-            <div className="flex items-center gap-4 bg-gradient-to-l from-[#176B78] to-[#263B49] p-5 text-white">
+            <div className="flex items-center gap-4 bg-gradient-to-l from-[#142F50] to-[#21845A] p-5 text-white">
 
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#35A99A] font-extrabold text-white">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/15 font-extrabold text-white">
                 {questionIndex + 1}
               </div>
 
@@ -306,19 +306,19 @@ export default function QuizOne() {
                   question.answer === optionIndex;
 
                 let optionStyle =
-                  "border-[#EAF4F3] bg-white hover:border-[#35A99A] hover:bg-[#EAF4F3]";
+                  "border-[#DFE6EF] bg-white hover:border-[#21845A] hover:bg-[#F3F6FA]";
 
                 if (selected && !submitted) {
                   optionStyle =
-                    "border-[#35A99A] bg-[#EAF4F3] text-[#176B78]";
+                    "border-[#21845A] bg-[#F3F6FA] text-[#142F50]";
                 }
 
                 if (submitted && correct) {
                   optionStyle =
-                    "border-green-500 bg-green-50 text-green-800";
+                    "border-[#21845A] bg-[#F3F6FA] text-[#142F50]";
                 } else if (submitted && selected && !correct) {
                   optionStyle =
-                    "border-red-400 bg-red-50 text-red-800";
+                    "border-[#D5AD62] bg-[#F3F6FA] text-[#536579]";
                 }
 
                 return (
@@ -330,9 +330,7 @@ export default function QuizOne() {
                       handleAnswer(questionIndex, optionIndex)
                     }
                     className={`flex w-full items-center gap-3 rounded-xl border p-4 text-right transition ${optionStyle} ${
-                      submitted
-                        ? "cursor-default"
-                        : "cursor-pointer"
+                      submitted ? "cursor-default" : "cursor-pointer"
                     }`}
                   >
 
@@ -357,9 +355,9 @@ export default function QuizOne() {
               })}
 
               {submitted && (
-                <div className="mt-4 rounded-xl border border-[#EAF4F3] bg-[#EAF4F3] p-4 leading-8 text-[#526B78]">
+                <div className="mt-4 rounded-xl border border-[#DFE6EF] bg-[#F3F6FA] p-4 leading-8 text-[#536579]">
 
-                  <p className="font-extrabold text-[#176B78]">
+                  <p className="font-extrabold text-[#142F50]">
                     التوضيح:
                   </p>
 
@@ -374,10 +372,10 @@ export default function QuizOne() {
 
         {/* Submit Button */}
         {!submitted && (
-          <div className="rounded-3xl border border-[#EAF4F3] bg-white p-7 text-center shadow-sm">
+          <div className="rounded-3xl border border-[#DFE6EF] bg-white p-7 text-center shadow-sm">
 
             {answeredCount < questions.length && (
-              <p className="mb-4 text-sm text-[#71838B]">
+              <p className="mb-4 text-sm text-[#536579]">
                 متبقي {questions.length - answeredCount} سؤال لم تتم الإجابة عنه.
               </p>
             )}
@@ -386,7 +384,7 @@ export default function QuizOne() {
               type="button"
               onClick={handleSubmit}
               disabled={answeredCount !== questions.length}
-              className="w-full rounded-xl bg-[#35A99A] px-8 py-4 font-extrabold text-white transition hover:bg-[#278F83] disabled:cursor-not-allowed disabled:bg-slate-300 md:w-auto"
+              className="w-full rounded-xl bg-[#142F50] px-8 py-4 font-extrabold text-white transition hover:bg-[#21845A] disabled:cursor-not-allowed disabled:bg-[#A9B9CC] md:w-auto"
             >
               تصحيح الإجابات
             </button>
@@ -394,9 +392,9 @@ export default function QuizOne() {
           </div>
         )}
 
-        {/* Celebration and Results */}
+        {/* Results */}
         {submitted && (
-          <div className="relative overflow-hidden rounded-3xl border border-[#EAF4F3] bg-white p-8 text-center shadow-lg md:p-12">
+          <div className="relative overflow-hidden rounded-3xl border border-[#DFE6EF] bg-white p-8 text-center shadow-lg md:p-12">
 
             <div className="mb-6 flex justify-center gap-5 text-4xl">
               <span className="animate-bounce">🎉</span>
@@ -408,19 +406,19 @@ export default function QuizOne() {
               </span>
             </div>
 
-            <h2 className="text-3xl font-extrabold text-[#176B78]">
+            <h2 className="text-3xl font-extrabold text-[#142F50]">
               أحسنت! انتهيت من الاختبار
             </h2>
 
-            <p className="mt-4 text-[#71838B]">
+            <p className="mt-4 text-[#536579]">
               نتيجتك النهائية
             </p>
 
-            <p className="mt-3 text-6xl font-extrabold text-[#35A99A]">
+            <p className="mt-3 text-6xl font-extrabold text-[#21845A]">
               {score} / {questions.length}
             </p>
 
-            <p className="mt-3 text-lg font-bold text-[#263B49]">
+            <p className="mt-3 text-lg font-bold text-[#536579]">
               {score === questions.length
                 ? "ممتاز! كل إجاباتك صحيحة 🏆"
                 : score >= 5
@@ -428,12 +426,12 @@ export default function QuizOne() {
                 : "لا تستسلمي، حاولي مرة أخرى 💪"}
             </p>
 
-            <div className="mt-6 rounded-2xl bg-[#EAF4F3] p-5">
-              <p className="text-lg font-bold text-[#176B78]">
+            <div className="mt-6 rounded-2xl bg-[#F3F6FA] p-5">
+              <p className="text-lg font-bold text-[#142F50]">
                 {Math.round((score / questions.length) * 100)}%
               </p>
 
-              <p className="mt-2 text-[#526B78]">
+              <p className="mt-2 text-[#536579]">
                 نسبة الإجابات الصحيحة
               </p>
             </div>
@@ -445,7 +443,7 @@ export default function QuizOne() {
             <button
               type="button"
               onClick={handleReset}
-              className="mt-7 rounded-xl bg-[#35A99A] px-8 py-3 font-bold text-white transition hover:bg-[#278F83]"
+              className="mt-7 rounded-xl bg-[#142F50] px-8 py-3 font-bold text-white transition hover:bg-[#21845A]"
             >
               إعادة الاختبار
             </button>
@@ -456,19 +454,19 @@ export default function QuizOne() {
       </section>
 
       {/* Navigation */}
-      <section className="border-t border-[#EAF4F3] bg-white">
+      <section className="border-t border-[#DFE6EF] bg-white">
         <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-4 px-6 py-8">
 
           <Link
             href="/lesson1"
-            className="rounded-xl border border-[#176B78] px-6 py-3 font-bold text-[#176B78] transition hover:bg-[#EAF4F3]"
+            className="rounded-xl border border-[#142F50] px-6 py-3 font-bold text-[#142F50] transition hover:bg-[#F3F6FA]"
           >
             العودة إلى الدرس الأول
           </Link>
 
           <Link
             href="/courses"
-            className="rounded-xl bg-[#35A99A] px-6 py-3 font-bold text-white transition hover:bg-[#278F83]"
+            className="rounded-xl bg-[#142F50] px-6 py-3 font-bold text-white transition hover:bg-[#21845A]"
           >
             العودة إلى المقرر
           </Link>

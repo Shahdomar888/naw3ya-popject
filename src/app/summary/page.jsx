@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 const sections = [
@@ -73,11 +74,11 @@ const sections = [
 
 export default function SummaryPage() {
   return (
-    <main className="min-h-screen bg-[#F7F9FC]">
+    <main className="min-h-screen bg-[#F3F6FA]">
 
       {/* Header */}
-      <section className="bg-gradient-to-br from-[#176B78] to-[#263B49] px-6 py-14 text-center text-white md:py-16">
-        <span className="rounded-full border border-[#E9B44C]/40 bg-white/10 px-5 py-2 text-sm font-bold text-[#E9B44C]">
+      <section className="bg-gradient-to-br from-[#142F50] to-[#21845A] px-6 py-14 text-center text-white md:py-16">
+        <span className="rounded-full border border-[#D5AD62]/40 bg-white/10 px-5 py-2 text-sm font-bold text-[#D5AD62]">
           Simulation Lab
         </span>
 
@@ -94,36 +95,36 @@ export default function SummaryPage() {
       <section className="mx-auto max-w-5xl px-5 py-12">
 
         {/* Introduction */}
-        <div className="mb-10 rounded-2xl border border-[#EAF4F3] bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-black text-[#176B78]">
+        <div className="mb-10 rounded-2xl border border-[#DFE6EF] bg-white p-6 shadow-sm">
+          <h2 className="text-xl font-black text-[#142F50]">
             ماذا ستجد في هذا الملخص؟
           </h2>
 
-          <p className="mt-3 leading-8 text-[#526B78]">
+          <p className="mt-3 leading-8 text-[#536579]">
             أهم التعريفات والمفاهيم، والمراجع المستخدمة في جداول البيانات،
             والدوال الأساسية، وتطبيقات المحاكاة وطريقة مونت كارلو.
           </p>
         </div>
 
         {/* Educational Video */}
-        <div className="mb-12 overflow-hidden rounded-3xl border border-[#EAF4F3] bg-white p-5 shadow-md md:p-7">
+        <div className="mb-12 overflow-hidden rounded-3xl border border-[#DFE6EF] bg-white p-5 shadow-md md:p-7">
 
           <div className="mb-6 text-center">
-            <span className="font-bold text-[#35A99A]">
+            <span className="font-bold text-[#21845A]">
               التعلّم المرئي
             </span>
 
-            <h2 className="mt-3 text-2xl font-black text-[#176B78]">
+            <h2 className="mt-3 text-2xl font-black text-[#142F50]">
               فيديو شرح المقرر
             </h2>
 
-            <p className="mt-3 leading-8 text-[#71838B]">
+            <p className="mt-3 leading-8 text-[#536579]">
               شاهدي الفيديو التعليمي لمراجعة موضوعات المحاكاة
               وتطبيقاتها باستخدام جداول البيانات.
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl bg-[#263B49] p-2 shadow-lg">
+          <div className="overflow-hidden rounded-2xl bg-[#142F50] p-2 shadow-lg">
             <iframe
               className="aspect-video w-full rounded-xl"
               src="https://www.youtube-nocookie.com/embed/AlUePOGfU1s"
@@ -140,10 +141,10 @@ export default function SummaryPage() {
           {sections.map((section, index) => (
             <article
               key={section.title}
-              className="overflow-hidden rounded-2xl border border-[#EAF4F3] bg-white shadow-sm"
+              className="overflow-hidden rounded-2xl border border-[#DFE6EF] bg-white shadow-sm"
             >
-              <div className="bg-gradient-to-r from-[#176B78] to-[#263B49] px-6 py-5 text-white">
-                <span className="text-xs font-bold text-[#E9B44C]">
+              <div className="bg-gradient-to-r from-[#142F50] to-[#21845A] px-6 py-5 text-white">
+                <span className="text-xs font-bold text-[#D5AD62]">
                   الجزء {index + 1}
                 </span>
 
@@ -156,13 +157,13 @@ export default function SummaryPage() {
                 {section.points.map((point) => (
                   <div
                     key={point.name}
-                    className="rounded-xl border border-[#EAF4F3] bg-[#F7F9FC] p-4 transition hover:border-[#35A99A]/50"
+                    className="rounded-xl border border-[#DFE6EF] bg-[#F3F6FA] p-4 transition hover:border-[#21845A]/50"
                   >
-                    <h3 className="font-extrabold text-[#176B78]">
+                    <h3 className="font-extrabold text-[#142F50]">
                       {point.name}
                     </h3>
 
-                    <p className="mt-2 text-sm leading-8 text-[#526B78]">
+                    <p className="mt-2 text-sm leading-8 text-[#536579]">
                       {point.detail}
                     </p>
                   </div>
@@ -173,7 +174,7 @@ export default function SummaryPage() {
         </div>
 
         {/* Comprehensive Quiz */}
-        <div className="mt-10 rounded-3xl bg-gradient-to-br from-[#176B78] to-[#263B49] p-8 text-center text-white">
+        <div className="mt-10 rounded-3xl bg-gradient-to-br from-[#142F50] to-[#21845A] p-8 text-center text-white">
           <h2 className="text-2xl font-black">
             هل أنت مستعد لاختبار معلوماتك؟
           </h2>
@@ -185,7 +186,7 @@ export default function SummaryPage() {
 
           <Link
             href="/comprehensive-quiz"
-            className="mt-7 inline-flex rounded-xl bg-[#35A99A] px-8 py-4 font-extrabold text-white transition hover:bg-[#278F83]"
+            className="mt-7 inline-flex rounded-xl bg-[#21845A] px-8 py-4 font-extrabold text-white transition hover:bg-[#176B49]"
           >
             ابدأ الاختبار الشامل
           </Link>

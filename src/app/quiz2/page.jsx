@@ -190,13 +190,13 @@ export default function Quiz2Page() {
   }
 
   return (
-    <main dir="rtl" className="min-h-screen bg-[#F7F9FC]">
+    <main dir="rtl" className="min-h-screen bg-[#F3F6FA]">
 
       {/* Header */}
-      <section className="bg-gradient-to-l from-[#176B78] to-[#263B49] px-6 py-16 text-center text-white">
+      <section className="bg-gradient-to-l from-[#21845A] to-[#142F50] px-6 py-16 text-center text-white">
         <div className="mx-auto max-w-4xl">
 
-          <p className="mb-3 font-bold text-[#E9B44C]">
+          <p className="mb-3 font-bold text-[#D5AD62]">
             Simulation Lab
           </p>
 
@@ -229,14 +229,14 @@ export default function Quiz2Page() {
         {!submitted ? (
           <>
             {/* Progress */}
-            <div className="mb-8 flex items-center justify-between gap-3 rounded-2xl border border-[#EAF4F3] bg-white p-5 shadow-sm">
+            <div className="mb-8 flex items-center justify-between gap-3 rounded-2xl border border-[#DFE6EF] bg-white p-5 shadow-sm">
 
               <div>
-                <p className="font-extrabold text-[#176B78]">
+                <p className="font-extrabold text-[#142F50]">
                   أجيبي عن جميع الأسئلة
                 </p>
 
-                <p className="mt-1 text-sm text-[#71838B]">
+                <p className="mt-1 text-sm text-[#536579]">
                   تم الإجابة عن {Object.keys(answers).length} من {questions.length}
                 </p>
               </div>
@@ -246,8 +246,8 @@ export default function Quiz2Page() {
                 onClick={() => setSoundEnabled(!soundEnabled)}
                 className={`rounded-xl px-4 py-3 text-sm font-bold text-white transition ${
                   soundEnabled
-                    ? "bg-[#35A99A] hover:bg-[#278F83]"
-                    : "bg-[#71838B]"
+                    ? "bg-[#21845A] hover:bg-[#176B49]"
+                    : "bg-[#536579]"
                 }`}
               >
                 {soundEnabled ? "🔊 الصوت مفعل" : "🔇 الصوت مغلق"}
@@ -255,9 +255,9 @@ export default function Quiz2Page() {
 
             </div>
 
-            <div className="mb-8 h-3 overflow-hidden rounded-full bg-[#EAF4F3]">
+            <div className="mb-8 h-3 overflow-hidden rounded-full bg-[#DFE6EF]">
               <div
-                className="h-full rounded-full bg-[#35A99A] transition-all duration-300"
+                className="h-full rounded-full bg-[#21845A] transition-all duration-300"
                 style={{
                   width: `${
                     (Object.keys(answers).length / questions.length) * 100
@@ -272,16 +272,16 @@ export default function Quiz2Page() {
               {questions.map((question, index) => (
                 <div
                   key={index}
-                  className="rounded-3xl border border-[#EAF4F3] bg-white p-6 shadow-sm md:p-8"
+                  className="rounded-3xl border border-[#DFE6EF] bg-white p-6 shadow-sm md:p-8"
                 >
 
                   <div className="mb-5 flex items-start gap-3">
 
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#176B78] font-extrabold text-white">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#142F50] font-extrabold text-white">
                       {index + 1}
                     </span>
 
-                    <h2 className="pt-1 text-lg font-extrabold leading-8 text-[#176B78]">
+                    <h2 className="pt-1 text-lg font-extrabold leading-8 text-[#142F50]">
                       {question.question}
                     </h2>
 
@@ -300,8 +300,8 @@ export default function Quiz2Page() {
                           key={optionIndex}
                           className={`flex cursor-pointer items-center gap-3 rounded-xl border-2 p-4 transition-all duration-200 ${
                             isSelected
-                              ? "border-[#35A99A] bg-[#EAF4F3] shadow-sm"
-                              : "border-[#EAF4F3] bg-white hover:border-[#35A99A] hover:bg-[#F7F9FC]"
+                              ? "border-[#21845A] bg-[#F3F6FA] shadow-sm"
+                              : "border-[#DFE6EF] bg-white hover:border-[#21845A] hover:bg-[#F3F6FA]"
                           }`}
                         >
 
@@ -315,21 +315,21 @@ export default function Quiz2Page() {
                                 [index]: optionIndex,
                               }))
                             }
-                            className="h-5 w-5 shrink-0 accent-[#35A99A]"
+                            className="h-5 w-5 shrink-0 accent-[#21845A]"
                           />
 
                           <span
                             className={`flex-1 font-bold leading-7 ${
                               isSelected
-                                ? "text-[#176B78]"
-                                : "text-[#526B78]"
+                                ? "text-[#142F50]"
+                                : "text-[#536579]"
                             }`}
                           >
                             {option}
                           </span>
 
                           {isSelected && (
-                            <span className="font-extrabold text-[#35A99A]">
+                            <span className="font-extrabold text-[#21845A]">
                               ✓
                             </span>
                           )}
@@ -350,7 +350,7 @@ export default function Quiz2Page() {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="rounded-xl bg-[#35A99A] px-12 py-4 text-lg font-extrabold text-white shadow-lg transition hover:bg-[#278F83]"
+                className="rounded-xl bg-[#21845A] px-12 py-4 text-lg font-extrabold text-white shadow-lg transition hover:bg-[#176B49]"
               >
                 تصحيح الإجابات
               </button>
@@ -362,9 +362,9 @@ export default function Quiz2Page() {
           /* Result */
           <div className="space-y-8">
 
-            <div className="overflow-hidden rounded-3xl border border-[#EAF4F3] bg-white text-center shadow-lg">
+            <div className="overflow-hidden rounded-3xl border border-[#DFE6EF] bg-white text-center shadow-lg">
 
-              <div className="bg-gradient-to-l from-[#176B78] to-[#263B49] px-6 py-12 text-white">
+              <div className="bg-gradient-to-l from-[#21845A] to-[#142F50] px-6 py-12 text-white">
 
                 <div className="mb-4 text-6xl">
                   {percentage >= 50 ? "🎉" : "🌟"}
@@ -378,7 +378,7 @@ export default function Quiz2Page() {
                   {getResultMessage()}
                 </p>
 
-                <div className="mt-8 text-6xl font-extrabold text-[#E9B44C]">
+                <div className="mt-8 text-6xl font-extrabold text-[#D5AD62]">
                   {score} / {questions.length}
                 </div>
 
@@ -394,7 +394,7 @@ export default function Quiz2Page() {
                   🎊 ✨ 🥳 🏅 🎓
                 </div>
 
-                <p className="font-bold text-[#176B78]">
+                <p className="font-bold text-[#142F50]">
                   {percentage === 100
                     ? "إنجاز رائع! تستحقين التميز."
                     : "استمري في التعلم، فكل محاولة تقربك من النجاح."}
@@ -405,14 +405,14 @@ export default function Quiz2Page() {
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="rounded-xl bg-[#35A99A] px-7 py-3 font-bold text-white transition hover:bg-[#278F83]"
+                    className="rounded-xl bg-[#21845A] px-7 py-3 font-bold text-white transition hover:bg-[#176B49]"
                   >
                     إعادة الاختبار
                   </button>
 
                   <Link
                     href="/lesson2"
-                    className="rounded-xl bg-[#176B78] px-7 py-3 font-bold text-white transition hover:bg-[#125762]"
+                    className="rounded-xl bg-[#142F50] px-7 py-3 font-bold text-white transition hover:bg-[#21845A]"
                   >
                     مراجعة الدرس
                   </Link>
@@ -423,9 +423,9 @@ export default function Quiz2Page() {
             </div>
 
             {/* Answer Review */}
-            <div className="rounded-3xl border border-[#EAF4F3] bg-white p-6 shadow-sm md:p-8">
+            <div className="rounded-3xl border border-[#DFE6EF] bg-white p-6 shadow-sm md:p-8">
 
-              <h2 className="mb-6 text-2xl font-extrabold text-[#176B78]">
+              <h2 className="mb-6 text-2xl font-extrabold text-[#142F50]">
                 مراجعة الإجابات
               </h2>
 
@@ -441,8 +441,8 @@ export default function Quiz2Page() {
                       key={index}
                       className={`rounded-2xl border p-5 ${
                         isCorrect
-                          ? "border-green-200 bg-green-50"
-                          : "border-red-200 bg-red-50"
+                          ? "border-[#21845A]/30 bg-[#21845A]/10"
+                          : "border-[#D5AD62]/50 bg-[#D5AD62]/10"
                       }`}
                     >
 
@@ -454,22 +454,22 @@ export default function Quiz2Page() {
 
                         <div>
 
-                          <h3 className="font-extrabold leading-7 text-[#263B49]">
+                          <h3 className="font-extrabold leading-7 text-[#142F50]">
                             {index + 1}. {question.question}
                           </h3>
 
-                          <p className="mt-3 text-sm leading-7 text-[#526B78]">
+                          <p className="mt-3 text-sm leading-7 text-[#536579]">
                             إجابتك: {question.options[answers[index]]}
                           </p>
 
                           {!isCorrect && (
-                            <p className="mt-2 text-sm font-bold leading-7 text-green-800">
+                            <p className="mt-2 text-sm font-bold leading-7 text-[#21845A]">
                               الإجابة الصحيحة:{" "}
                               {question.options[question.correct]}
                             </p>
                           )}
 
-                          <p className="mt-3 text-sm leading-7 text-[#526B78]">
+                          <p className="mt-3 text-sm leading-7 text-[#536579]">
                             {question.explanation}
                           </p>
 
@@ -490,7 +490,7 @@ export default function Quiz2Page() {
       <div className="pb-12 text-center">
         <Link
           href="/courses"
-          className="font-bold text-[#176B78] underline decoration-[#35A99A] underline-offset-4"
+          className="font-bold text-[#142F50] underline decoration-[#21845A] underline-offset-4"
         >
           العودة إلى المقرر
         </Link>

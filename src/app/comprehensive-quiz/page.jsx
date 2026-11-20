@@ -272,12 +272,12 @@ export default function ComprehensiveQuizPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#F7F9FC] pb-16 text-[#263B49]">
+    <main className="min-h-screen bg-[#F3F6FA] pb-16 text-[#142F50]">
 
       {/* Hero Section */}
-      <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#176B78] via-[#238B8B] to-[#35A99A] px-6 py-12 text-center text-white md:py-16">
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-[#142F50] via-[#21845A] to-[#21845A] px-6 py-12 text-center text-white md:py-16">
 
-        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#E9B44C]/20 blur-3xl" />
+        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#D5AD62]/20 blur-3xl" />
         <div className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-4xl">
@@ -297,17 +297,17 @@ export default function ComprehensiveQuizPage() {
 
           <div className="mx-auto mt-7 flex max-w-md justify-center gap-4">
             <div className="rounded-2xl border border-white/15 bg-white/10 px-7 py-3">
-              <p className="text-2xl font-black text-[#FFE09A]">20</p>
+              <p className="text-2xl font-black text-[#D5AD62]">20</p>
               <p className="mt-1 text-xs text-white/90">سؤال</p>
             </div>
 
             <div className="rounded-2xl border border-white/15 bg-white/10 px-7 py-3">
-              <p className="text-2xl font-black text-[#FFE09A]">2</p>
+              <p className="text-2xl font-black text-[#D5AD62]">2</p>
               <p className="mt-1 text-xs text-white/90">درسان</p>
             </div>
           </div>
 
-          <div className="mx-auto mt-8 h-1.5 w-24 rounded-full bg-[#E9B44C]" />
+          <div className="mx-auto mt-8 h-1.5 w-24 rounded-full bg-[#D5AD62]" />
 
         </div>
       </section>
@@ -316,13 +316,13 @@ export default function ComprehensiveQuizPage() {
 
         {/* Result */}
         {submitted ? (
-          <div className="mb-8 rounded-3xl border border-[#E2ECEC] bg-white p-8 text-center shadow-lg shadow-[#176B78]/10">
+          <div className="mb-8 rounded-3xl border border-[#DFE6EF] bg-white p-8 text-center shadow-lg shadow-[#142F50]/10">
 
             <div className="text-5xl">
               {percentage >= 85 ? "🏆" : percentage >= 60 ? "🎉" : "📚"}
             </div>
 
-            <h2 className="mt-4 text-2xl font-black text-[#176B78]">
+            <h2 className="mt-4 text-2xl font-black text-[#142F50]">
               {percentage >= 85
                 ? "ممتاز! أداء رائع"
                 : percentage >= 60
@@ -330,31 +330,31 @@ export default function ComprehensiveQuizPage() {
                 : "استمر في التعلم والمحاولة"}
             </h2>
 
-            <p className="mt-3 text-[#71838B]">
+            <p className="mt-3 text-[#536579]">
               لقد أكملت الاختبار الشامل بنجاح.
             </p>
 
-            <div className="mx-auto mt-7 flex h-36 w-36 flex-col items-center justify-center rounded-full border-[10px] border-[#E9B44C]/50 bg-[#FFF8E8]">
-              <span className="text-4xl font-black text-[#176B78]">
+            <div className="mx-auto mt-7 flex h-36 w-36 flex-col items-center justify-center rounded-full border-[10px] border-[#D5AD62]/50 bg-[#D5AD62]/10">
+              <span className="text-4xl font-black text-[#142F50]">
                 {percentage}%
               </span>
-              <span className="mt-1 text-xs text-[#71838B]">
+              <span className="mt-1 text-xs text-[#536579]">
                 النسبة المئوية
               </span>
             </div>
 
-            <p className="mt-6 text-lg font-bold text-[#176B78]">
+            <p className="mt-6 text-lg font-bold text-[#142F50]">
               درجتك: {score} من {questions.length}
             </p>
 
-            <p className="mt-2 text-sm text-[#71838B]">
+            <p className="mt-2 text-sm text-[#536579]">
               الإجابات الصحيحة: {score} — الإجابات غير الصحيحة:{" "}
               {questions.length - score}
             </p>
 
             <button
               onClick={resetQuiz}
-              className="mt-7 rounded-xl bg-[#176B78] px-8 py-3 font-bold text-white transition hover:bg-[#125762]"
+              className="mt-7 rounded-xl bg-[#21845A] px-8 py-3 font-bold text-white transition hover:bg-[#176B49]"
             >
               إعادة الاختبار
             </button>
@@ -362,21 +362,21 @@ export default function ComprehensiveQuizPage() {
           </div>
         ) : (
           /* Progress */
-          <div className="mb-8 rounded-2xl border border-[#E2ECEC] bg-white p-5 shadow-sm">
+          <div className="mb-8 rounded-2xl border border-[#DFE6EF] bg-white p-5 shadow-sm">
 
             <div className="flex items-center justify-between gap-3">
-              <p className="font-bold text-[#176B78]">
+              <p className="font-bold text-[#142F50]">
                 تقدمك في الاختبار
               </p>
 
-              <p className="text-sm font-bold text-[#238B8B]">
+              <p className="text-sm font-bold text-[#21845A]">
                 {answeredCount} / {questions.length}
               </p>
             </div>
 
-            <div className="mt-3 h-3 overflow-hidden rounded-full bg-[#EAF4F3]">
+            <div className="mt-3 h-3 overflow-hidden rounded-full bg-[#DFE6EF]">
               <div
-                className="h-full rounded-full bg-gradient-to-l from-[#176B78] to-[#35A99A] transition-all duration-300"
+                className="h-full rounded-full bg-gradient-to-l from-[#142F50] to-[#21845A] transition-all duration-300"
                 style={{
                   width: `${(answeredCount / questions.length) * 100}%`,
                 }}
@@ -391,7 +391,7 @@ export default function ComprehensiveQuizPage() {
           <button
             type="button"
             onClick={() => setSoundEnabled((value) => !value)}
-            className="rounded-xl border border-[#E2ECEC] bg-white px-4 py-2 text-sm font-bold text-[#176B78] shadow-sm transition hover:bg-[#EAF4F3]"
+            className="rounded-xl border border-[#DFE6EF] bg-white px-4 py-2 text-sm font-bold text-[#142F50] shadow-sm transition hover:bg-[#F3F6FA]"
           >
             {soundEnabled ? "🔊 الصوت يعمل" : "🔇 الصوت مغلق"}
           </button>
@@ -405,16 +405,16 @@ export default function ComprehensiveQuizPage() {
           return (
             <article
               key={index}
-              className="mb-6 rounded-2xl border border-[#E2ECEC] bg-white p-5 shadow-sm transition hover:shadow-md md:p-7"
+              className="mb-6 rounded-2xl border border-[#DFE6EF] bg-white p-5 shadow-sm transition hover:shadow-md md:p-7"
             >
 
               <div className="mb-5 flex items-start gap-3">
 
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#176B78] font-black text-white">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#142F50] font-black text-white">
                   {index + 1}
                 </span>
 
-                <h3 className="pt-1 font-extrabold leading-7 text-[#176B78]">
+                <h3 className="pt-1 font-extrabold leading-7 text-[#142F50]">
                   {question.question}
                 </h3>
 
@@ -427,19 +427,19 @@ export default function ComprehensiveQuizPage() {
                   const isRightAnswer = optionIndex === question.answer;
 
                   let optionStyle =
-                    "border-[#E2ECEC] bg-white hover:border-[#35A99A] hover:bg-[#EAF4F3]";
+                    "border-[#DFE6EF] bg-white hover:border-[#21845A] hover:bg-[#F3F6FA]";
 
                   if (!submitted && isSelected) {
                     optionStyle =
-                      "border-[#238B8B] bg-[#EAF4F3] shadow-sm";
+                      "border-[#21845A] bg-[#F3F6FA] shadow-sm";
                   }
 
                   if (submitted && isRightAnswer) {
                     optionStyle =
-                      "border-green-500 bg-green-50 text-green-900";
+                      "border-[#21845A] bg-[#21845A]/10 text-[#142F50]";
                   } else if (submitted && isSelected && !isCorrect) {
                     optionStyle =
-                      "border-red-400 bg-red-50 text-red-900";
+                      "border-[#D5AD62] bg-[#D5AD62]/10 text-[#142F50]";
                   }
 
                   return (
@@ -462,7 +462,7 @@ export default function ComprehensiveQuizPage() {
                             [index]: optionIndex,
                           }))
                         }
-                        className="h-4 w-4 accent-[#176B78]"
+                        className="h-4 w-4 accent-[#21845A]"
                       />
 
                       <span className="flex-1 text-sm font-semibold leading-7">
@@ -470,11 +470,11 @@ export default function ComprehensiveQuizPage() {
                       </span>
 
                       {submitted && isRightAnswer && (
-                        <span className="font-black text-green-600">✓</span>
+                        <span className="font-black text-[#21845A]">✓</span>
                       )}
 
                       {submitted && isSelected && !isCorrect && (
-                        <span className="font-black text-red-600">✕</span>
+                        <span className="font-black text-[#D5AD62]">✕</span>
                       )}
 
                     </label>
@@ -487,8 +487,8 @@ export default function ComprehensiveQuizPage() {
                 <div
                   className={`mt-4 rounded-xl p-4 text-sm leading-7 ${
                     isCorrect
-                      ? "bg-green-50 text-green-800"
-                      : "bg-[#FFF6E5] text-[#795C21]"
+                      ? "bg-[#21845A]/10 text-[#176B49]"
+                      : "bg-[#D5AD62]/15 text-[#795C21]"
                   }`}
                 >
                   <p className="font-extrabold">
@@ -505,7 +505,7 @@ export default function ComprehensiveQuizPage() {
 
         {/* Submit */}
         {!submitted && (
-          <div className="rounded-2xl bg-gradient-to-l from-[#176B78] to-[#238B8B] p-6 text-center text-white shadow-lg">
+          <div className="rounded-2xl bg-gradient-to-l from-[#142F50] to-[#21845A] p-6 text-center text-white shadow-lg">
 
             <p className="mb-4 text-sm leading-7 text-white/90">
               {answeredCount === questions.length
@@ -518,7 +518,7 @@ export default function ComprehensiveQuizPage() {
             <button
               onClick={handleSubmit}
               disabled={answeredCount !== questions.length}
-              className="rounded-xl bg-[#E9B44C] px-10 py-4 font-extrabold text-[#263B49] transition hover:-translate-y-1 hover:bg-[#F3CC76] disabled:cursor-not-allowed disabled:opacity-40"
+              className="rounded-xl bg-[#D5AD62] px-10 py-4 font-extrabold text-[#142F50] transition hover:-translate-y-1 hover:bg-[#E2C17F] disabled:cursor-not-allowed disabled:opacity-40"
             >
               تصحيح الاختبار وإظهار النتيجة
             </button>
@@ -530,7 +530,7 @@ export default function ComprehensiveQuizPage() {
         <div className="mt-8 text-center">
           <Link
             href="/courses"
-            className="font-bold text-[#176B78] transition hover:text-[#35A99A]"
+            className="font-bold text-[#142F50] transition hover:text-[#21845A]"
           >
             العودة إلى المقرر
           </Link>
