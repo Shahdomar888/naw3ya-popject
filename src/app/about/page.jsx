@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#F7F9FC] text-[#263B49]">
